@@ -107,3 +107,30 @@ executable mobius
 
     -- Base language which the package is written in.
     default-language: Haskell2010
+
+executable torus
+    -- Import common warning flags.
+    import:           warnings
+
+    -- .hs or .lhs file containing the Main module.
+    main-is:          Torus.hs
+
+    -- Modules included in this executable, other than Main.
+    other-modules:    Maze
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+
+    -- Other library packages from which modules are imported.
+    build-depends:    base ^>=4.16.0.0
+                    , HPDF
+                    , containers
+                    , random
+                    , mtl
+                    , text
+
+    -- Directories containing source files.
+    hs-source-dirs:   src 
+
+    -- Base language which the package is written in.
+    default-language: Haskell2010
