@@ -177,20 +177,14 @@ main = do
 
     g <- getStdGen
     let startingPosition = front 0 0
-    print m 
     let m' = maze g m startingPosition
-    print m'
 
     let endingPosition = farthestCell m m' startingPosition
-    
-    print $ cells m'
-    print $ symmetric m
-    print $ symmetric m'
     
     Right helveticaBold <- mkStdFont Helvetica_Bold
     Right courier <- mkStdFont Courier  
 
-    runPdf "maze.pdf" (standardDocInfo { author="Jim Fowler", compressed = False}) rect $ do
+    runPdf "hypercard.pdf" (standardDocInfo { author="Jim Fowler", compressed = False}) rect $ do
         myFrontDocument m' startingPosition endingPosition
 
   
